@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+<link rel="stylesheet" href="/stylesheets/index.css">
+
+<h1>This is the INDEX</h1>
+
+<% blogs.forEach(function(blog){ %>
+<div>
+    <h2><%= blog.title %></h2>
+    <img class="img-responsive" width="304" height="236" src = "<%= blog.image %>" >
+    <span><%= blog.created %></span>
+    <p><%= blog.body.substring(0, 100) %>...</p>
+    <a href="/blogs/<%= blog._id %>">Read More</a>
+</div>
+<hr>
+<% }) %>
+
+<% include ./partials/footer %>
